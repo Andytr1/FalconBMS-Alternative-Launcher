@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace FalconBMS_Alternative_Launcher_Cs
 {
+    /// <summary>
+    /// Represents a DX device - usually a joystick.
+    /// </summary>
     public class JoyAssgn
     {
         // Member
@@ -268,7 +271,7 @@ namespace FalconBMS_Alternative_Launcher_Cs
         }
 
         /// <summary>
-        /// Write Joy Assignment Status to KeyMappingGridCell.
+        /// Returns a string of all button mappings for a specific command for this device
         /// </summary>
         public string KeyMappingPreviewDX(KeyAssgn keyAssign)
         {

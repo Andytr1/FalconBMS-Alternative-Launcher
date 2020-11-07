@@ -130,11 +130,11 @@ namespace FalconBMS_Alternative_Launcher_Cs
                         Select_PinkyShift.IsChecked = true;
                     }
 
-                    if (buttons[ii] == neutralButtons[i].buttons[ii])
+                    if (buttons[ii] == neutralButtons[i].buttons[ii]) // && buttons[ii] == 0)
                         continue;
                     if (buttons[ii] == 0)
                     {
-                        getNeutralPosition();
+                        // getNeutralPosition();
                         continue;
                     }
 
@@ -158,13 +158,9 @@ namespace FalconBMS_Alternative_Launcher_Cs
                     }
                     else
                     {
-                        tmpJoyStick[i].dx[ii].Assign(this.tmpCallback.GetCallback(), pinkyStatus, behaviourStatus, this.invokeStatus, 0);
-                    }
-                    //while (buttons[ii] != neutralButtons[i].buttons[ii])
-                    //{
-                    //    buttons = deviceControl.joyStick[i].CurrentJoystickState.GetButtons();
-                    //}
-                    getNeutralPosition();
+                        tmpJoyStick[i].dx[ii].Assign(this.tmpCallback.GetCallback(), pinkyStatus, behaviourStatus, this.invokeStatus, 0); // <<< Assignment HERE !!!!!
+                    }                    
+                    //getNeutralPosition();
                     return;
                 }
                 povs = deviceControl.joyStick[i].CurrentJoystickState.GetPointOfView();
@@ -175,7 +171,7 @@ namespace FalconBMS_Alternative_Launcher_Cs
                         continue;
                     if (povs[ii] == -1)
                     {
-                        getNeutralPosition();
+                        // getNeutralPosition();
                         continue;
                     }
 
@@ -189,7 +185,7 @@ namespace FalconBMS_Alternative_Launcher_Cs
                     //{
                     //    povs = deviceControl.joyStick[i].CurrentJoystickState.GetPointOfView();
                     //}
-                    getNeutralPosition();
+                    // getNeutralPosition();
                     return;
                 }
             }
